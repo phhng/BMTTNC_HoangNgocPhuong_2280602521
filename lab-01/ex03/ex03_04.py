@@ -6,5 +6,5 @@ def  truy_cap_phan_tu(tuple_data):
 input_tuple = eval(input("Nhập tuple, ví dụ (1, 2, 3): "))
 first, last = truy_cap_phan_tu(input_tuple)
 
-print("Phần từ đầu tiên:",first)
-print("Phần từ cuối cùng:",last)
+print("Phần tử đầu tiên:",first)
+print("Phần tử cuối cùng:",last)
