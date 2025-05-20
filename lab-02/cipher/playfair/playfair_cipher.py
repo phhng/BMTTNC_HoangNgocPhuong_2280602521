@@ -1,4 +1,3 @@
-from cipher.caesar import ALPHABET
 class PlayFairCipher:
     def __init__(self) -> None:
         pass
