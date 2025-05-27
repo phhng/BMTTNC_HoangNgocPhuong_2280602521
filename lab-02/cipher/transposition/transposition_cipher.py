@@ -2,7 +2,7 @@ class TranpositionCipher:
     def __init__(self):
         pass
 
-    def encrypt(self, text, key):
+    def encrypt_text(self, text, key):
         encrypted_text = ''
         for col in range(key):
             pointer = col
@@ -11,7 +11,7 @@ class TranpositionCipher:
                 pointer += key
         return encrypted_text
     
-    def decrypt(self, text, key):
+    def decrypt_text(self, text, key):
         decrypted_text = [''] * key
         row,col = 0, 0
         for symbol in text:

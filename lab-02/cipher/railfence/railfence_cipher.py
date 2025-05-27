@@ -2,7 +2,7 @@ class RailFenceCipher:
     def __init__(self):
         pass
 
-    def rail_fence_encrypt(self,plain_text,num_rails):
+    def encrypt_text(self,plain_text,num_rails):
         rails = [[] for _ in range(num_rails)]
         rail_index = 0
         irection = 1
@@ -17,7 +17,7 @@ class RailFenceCipher:
         return cipher_text
 
 
-    def rail_fence_decrypt(self,cipher_text,num_rails):
+    def decrypt_text(self,cipher_text,num_rails):
         rail_lengths = [0] * num_rails
         rail_index = 0
         direction = 1
