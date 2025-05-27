@@ -30,7 +30,7 @@ def encrypt(cipher_name):
     if cipher_name in ["vigenere", "playfair"] and not key.isalpha():
         error = "Key must contain only letters for this cipher."
         return render_template("cipher.html", cipher_name=cipher_name, error=error, inputCipherText=text, inputKeyCipher=key)
-    elif not key.isdigit():
+    elif not cipher_name in ["vigenere", "playfair"] and not key.isdigit():
         error = "Key must contain only numbers for this cipher."
         return render_template("cipher.html", cipher_name=cipher_name, error=error, inputCipherText=text, inputKeyCipher=key)
 
@@ -61,7 +61,7 @@ def decrypt(cipher_name):
     if cipher_name in ["vigenere", "playfair"] and not key.isalpha():
         error = "Key must contain only letters for this cipher."
         return render_template("cipher.html", cipher_name=cipher_name, error=error, inputPlainText=text, inputKeyText=key)
-    elif not key.isdigit():
+    elif not cipher_name in ["vigenere", "playfair"] and not key.isdigit():
         error = "Key must contain only numbers for this cipher."
         return render_template("cipher.html", cipher_name=cipher_name, error=error, inputCipherText=text, inputKeyCipher=key)
     
