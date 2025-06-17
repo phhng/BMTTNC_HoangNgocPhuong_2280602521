@@ -22,4 +22,5 @@ for block in my_blockchain.chain:
     print("Previous Hash:", block.previous_hash)
     print("Hash:", block.hash)
     print("----------------------")
+    
 print("Is Blockchain Valid:", my_blockchain.is_chain_valid(my_blockchain.chain))
