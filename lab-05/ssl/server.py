@@ -9,14 +9,14 @@ clients = []
 
 def handle_client(client_socket):
     clients.append(client_socket)
-    print("Connected to:", client_socket.getpeername())
+    print("Đã kết nối với:", client_socket.getpeername())
 
     try:
         while True:
             data = client_socket.recv(1024)
             if not data:
                 break
-            print("Receive:", data.decode('utf-8'))
+            print("Nhận:", data.decode('utf-8'))
             for client in clients:
                 if client != client_socket:
                     try:
@@ -26,14 +26,14 @@ def handle_client(client_socket):
     except:
         clients.remove(client_socket)
     finally:
-        print("Disconnected:", client_socket.getpeername)
+        print("Đã ngắt kết nối:", client_socket.getpeername)
         clients.remove(client_socket)
         client_socket.close()
 
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server_socket.bind(server_address)
 server_socket.listen(5)
-print("Server is waiting for connection...")
+print("Server đang chờ kết nối...")
 
 while True:
     client_socket, client_address = server_socket.accept()
